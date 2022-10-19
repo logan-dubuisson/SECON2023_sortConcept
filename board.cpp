@@ -6,7 +6,7 @@ Board::Board() // Defaults to full board size (minus perimeter wall width)
     name = "mainBoard";
     dim[0] = (96 - 1 - 3); dim [1] = (48 - 2*(11/16));
     color = "000000";
-    float posA[2] = {0 + 1, 0 + (11/16)}, posB[2] = {(96 - 3),(48 - (11/16))};
+    float posA[2] = {0 + 1, 0 + 1}, posB[2] = {(96 - 8),(48 - 1)};
     pos[0] = 48; pos[1] = 24;
 }
 

@@ -5,26 +5,31 @@ Item::Item()
     isSorted = false; isScored = false;
     type = "null"; color = "null";
     length = 0; width = 0; height = 0;
+    pos[0] = 0; pos[1] = 0;
 }
 
 Item::Item(const std::string& type, const std::string& color)
 {
-    isSorted = false; isScored = false;
+    isScored = false;
     this->type = type;
     this->color = color;
+    pos[0] = 0; pos[1] = 0;
 
     if(type=="duck"){
         length = 3.5;
-        width = 3;
-        height = 3;
+        width = 3.0;
+        height = 3.0;
+        isSorted = false;
     }else if(type=="pedestal"){
-        length = 0.75;
-        width = 0.75;
-        height = 2.5;
+        length = 1.5;
+        width = 1.5;
+        height = 3.0;
+        isSorted = false;
     }else if(type=="chip"){
-        length = 0.5;
-        width = 0.5;
-        height = 0.05;
+        length = 1.5;
+        width = 1.5;
+        height = 0.24;
+        isSorted = true;
     }
 }
 
@@ -34,6 +39,11 @@ std::string Item::getColor(){
 
 std::string Item::getType(){
     return type;
+}
+
+void Item::getPos(float pos[2]){
+    pos[0] = this->pos[0];
+    pos[1] = this->pos[0];
 }
 
 void Item::getSize(float size[3]){
@@ -48,4 +58,17 @@ bool Item::getIsSorted(){
 
 bool Item::getScored(){
     return isScored;
+}
+
+void Item::setPos(const float pos[2]){
+    this->pos[0] = pos[0];
+    this->pos[1] = pos[1];
+}
+
+void Item::sort(const bool& sorted){
+    isSorted = sorted;
+}
+
+void Item::score(const bool& scored){
+    isScored = scored;
 }

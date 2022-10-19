@@ -7,7 +7,7 @@
 class Board
 {
 private:
-    float pos[2], dim[2];
+    float pos[2], dim[2]; // Values for position on coordinate grid and dimensions of board object
     std::string name, color;
     bool isRound;
 
@@ -21,7 +21,7 @@ private:
 public:
     // Constructors
     Board(); // default
-    Board(const std::string& name, const float posX[2], const float posY[2], const std::string& color); // floating-point dimensions in xy-plane, color in 24-bit RGB
+    Board(const std::string& name, const float posA[2], const float posB[2], const std::string& color); // floating-point dimensions in xy-plane, color in 24-bit RGB
     Board(const bool& isRound, const std::string& name, const float posCenter[2], const float radius[2], const std::string& color); //
 
     // Getter methods
